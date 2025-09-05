@@ -8,14 +8,14 @@ section {
 }
 
 .Luiz {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
 }
 
 h1 {
     padding: 3px 10%;
-    font-size: 73px;
+    font-size: 50px;
     font-family: "inter";
     color: #fff;
 }
@@ -28,16 +28,16 @@ p {
     display: grid;
     padding: 30px 10%;
     font-family: "inter";
-    font-size: 20px;
+    font-size: 15px;
     color: #fff;
 }
 
 .cta-section {
     font-weight: 600;
-    font-size: 18px;
+   
     color: #f0ffff;
-    width: 300px;
-    height: 65px;
+    width: 250px;
+    height: 50px;
     border-radius: 95px;
     margin: 0px 10%;
     background: linear-gradient(to right,#08e101a4, #08e101);
@@ -72,6 +72,7 @@ p {
         margin: 10px 11%;
     }
 
+    
     .divsection {
         justify-items: center;
     }
