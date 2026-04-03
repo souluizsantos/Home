@@ -7,6 +7,25 @@ body {
     font-family: inter;
     background-color: #fff;
     color: black;
+
+}
+
+.trail {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 255, 102, 0.7); /* cor do rastro */
+  border-radius: 50%;
+  pointer-events: none; /* não atrapalha cliques */
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
 }
 
 h1 {

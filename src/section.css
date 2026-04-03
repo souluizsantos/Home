@@ -13,6 +13,7 @@ section {
 }
 
 .divsection {
+    padding: 0% 0%;
     width: 500px;
 }
 
@@ -65,20 +66,42 @@ a {
 
 /* ------------------------------------- */
 
+.certificacoes {
+    padding: 2% 25%;
+}
+
+.pcertificacoes {
+    padding: 0% 0%;
+    width: 96%;
+}
+
+
 /* Responsivo */
-@media (max-width: 768px) {
+
+@media (max-width: 1000px) {
+
     section {
         display: grid;
         justify-content: center;
-        width: 600px;
+        width: auto;
+        padding: 2%;
+    
+    }
+    .divsection {
+    padding: 0% 5%;
+    width: auto;
     }
 
+     .divsection {
+    padding: 0% 0%;
+    width: 100%;
+}
     h1 {
-        width: 600px;
+        width: 500px;
     }
 
     p {
-        width: 310px;
+        width: 550px;
     }
 
     .btn {
@@ -86,9 +109,51 @@ a {
     }
 
     img {
-        width: 50%;
-        height: 80%;
-        padding: 1px 6%;
+        width: 200px;
+        height: 200px;
+        position: sticky;
+        padding: 0% 0%;
 
     }
+
+}
+
+
+@media (max-width: 768px) {
+    section {
+        display: grid;
+        justify-content: center;
+        width: auto;
+       
+    }
+
+    .divsection {
+    padding: 0% 16%;
+}
+ p {
+    width: 60%;
+ }
+
+    .btn {
+        padding: 12px 40px;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+      
+        position: static;
+        padding: 2% 16%;
+
+    }
+
+    .certificacoes {
+    padding: 0% 16%;
+    
+}
+
+.h1certificacoes {
+    font-size: 46px;
+    font-weight: bold;
+}
 }
