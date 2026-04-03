@@ -1,76 +1,77 @@
-.navcard {
-    width: 900px;
-    height: 100px;
-    justify-self: center;
-    justify-items: center;
-    border-radius: 0px 0px 50px 50px;
-    background-color: #1f201f;
-}
 
 .navbar {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    padding: 30px 10%;
+  background: linear-gradient(90deg, #ffffffac, #fdfdfd);
+  display: flex;
+  justify-content: end; /* logo à esquerda, menu à direita */
+  align-items: center;
+  padding: 1px 25px;
+  width: 78%;
 }
 
-.logo {
-    width: 4%;
-    border-radius: 50px;
+
+
+.menu {
+  display: flex;
+  gap: 25px;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: "inter";
-    font-size: 13px;
+.menu a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.ab::after {
-    background: #02f702;
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #00ff66;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #000000;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #111;
     position: absolute;
-    content: "";
-    inset: 0;
-    scale: 1 0;
-    z-index: -1;
-    border-radius: 5px;
-}
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
 
-a:hover {
-    scale: 1.05;
-    color: #070807;
-}
-
-a:hover::after {
-    scale: 1.7;
-    transition: 0.45s;
-}
-
-button:hover {
-    transform: scale(1.2);
-    opacity: 0.9;
-}
-
-
-@media (max-width: 500px) {
-    .logo {
-        width: 10%;
-        border-radius: 50px;
-    }
-
-    .navcard {
-        width: 100%;
-        height: 80px;
-        border-radius: 0px 0px 20px 20px;
-    }
-
-    .navbar {
+  .menu.active {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    padding: 30px 5%;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .navbar {
+  width: 10%;
+  color: #000000;
 }
+
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
