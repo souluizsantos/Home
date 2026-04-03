@@ -1,71 +1,94 @@
 img {
     width: 20%;
-    height:20%;
+    height: 20%;
     border-radius: 50%;
-    padding:20px 4%;
+    padding: 20px 4%;
+
+    
 }
 
 section {
     display: flex;
     justify-content: center;
 }
+
 .divsection {
     width: 500px;
 }
-a{
-  text-decoration: none;
-  color: inherit; /* herda a cor do pai, Assim não deixa cor de link*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+    /* herda a cor do pai, Assim não deixa cor de link*/
 }
 
+/* ------------------------------------- */
+
 .btn {
-  text-align: center;
-   border: 2px solid #00000033;
+    text-align: center;
+    border: 2px solid #00000033;
     /* borda preta */
-  display: inline-block;
-  background-color: #000000;
-  color: #ffffff;
-  padding: 12px 40px;
-  font-size: 1.2em;
-  font-weight: 600;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+
+    /* ------------------------------------- */
+
+    border-radius: 10px;
+    box-shadow: 0 0 15px #7793825e;
+    /* sombra projetada */
+    text-align: left;
 }
+
+/* ------------------------------------- */
 
 /* quando passa o mouse */
 .btn:hover {
-  background-color: #ffffff;
-  /* muda o fundo */
-  color: #000;
-  /* texto fica preto */
+    background-color: #ffffff;
+    /* muda o fundo */
+    color: #000;
+    /* texto fica preto */
 }
 
+/* ------------------------------------- */
 
 .btn:hover::after {
-  width: 100%;
+    width: 100%;
 }
+
+/* ------------------------------------- */
 
 /* Responsivo */
 @media (max-width: 768px) {
     section {
-    display: grid;
-    justify-content: center;
-    width: 600px;
-}
-h1 {
-    width: 600px;
-}
-p {
-    width: 310px;
-}
+        display: grid;
+        justify-content: center;
+        width: 600px;
+    }
 
-.btn {
-    padding: 12px 40px;
-}
-img {
-    width: 50%;
-    height: 80%;
-    padding: 1px 6%;
-}
+    h1 {
+        width: 600px;
+    }
+
+    p {
+        width: 310px;
+    }
+
+    .btn {
+        padding: 12px 40px;
+    }
+
+    img {
+        width: 50%;
+        height: 80%;
+        padding: 1px 6%;
+
+    }
 }
