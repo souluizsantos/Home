@@ -1,17 +1,20 @@
-
+/* Barra de Navegação Principal */
 .navbar {
-  width: 12px;
+  width: 90%; /* Largura total da barra */
+  max-width: 1200px; /* Limite para telas muito grandes */
   height: 80px;
   background: linear-gradient(90deg, #ffffffac, #fdfdfd);
   display: flex;
-  justify-content: end; /* logo à esquerda, menu à direita */
+  justify-content: space-between; /* Espaça os itens (logo/menu) */
   align-items: center;
-  
-  width: 78%;
+  margin: 0 auto; /* Centraliza a navbar na tela */
+  padding: 0 20px;
+  border-radius: 10px; /* Opcional: deixa as bordas arredondadas */
+  position: relative;
+  z-index: 1000;
 }
 
-
-
+/* Menu de Links (Desktop) */
 .menu {
   display: flex;
   gap: 25px;
@@ -25,7 +28,7 @@
   transition: color 0.3s ease;
 }
 
-
+/* Efeito da linha embaixo do link */
 .menu a::after {
   content: "";
   position: absolute;
@@ -37,20 +40,16 @@
   transition: width 0.3s ease;
 }
 
-.menu a:hover {
-  color: #000000;
-}
-
 .menu a:hover::after {
   width: 100%;
 }
 
-/* Hamburguer */
+/* Ícone Hamburger (Escondido no Desktop) */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -61,40 +60,39 @@
   transition: 0.3s;
 }
 
-/* Responsivo */
+/* --- Responsividade (Celular) --- */
 @media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #fffefe;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 88%;
-    padding: 20px;
+  .navbar {
+    width: 95%; /* Um pouco mais larga no celular */
+    justify-content: flex-end; /* Alinha o hamburger à direita */
   }
 
+  .hamburger {
+    display: flex; /* Mostra o ícone no celular */
+  }
+
+  .menu {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 85px; /* Aparece logo abaixo da navbar */
+    right: 0;
+    width: 200px; /* Largura do menu lateral */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Classe que será adicionada via JavaScript */
   .menu.active {
     display: flex;
     animation: slideDown 0.3s ease forwards;
   }
-
-  .hamburger {
-    display: flex;
-    padding: 2% 3%;
-    margin: -770%;
-  }
-  .navbar {
-  display: flex;
-  justify-content: end; /* logo à esquerda, menu à direita */
-  align-items: center;
-  width: 10%;
-  
 }
 
-}
-
+/* Animação de entrada */
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }

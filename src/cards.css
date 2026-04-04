@@ -1,142 +1,112 @@
+/* Container que segura todos os cards */
 .cards-container {
   display: flex;
   justify-content: center;
-  /* centraliza os cards */
-  gap: 20px;
-  /* espaço entre eles */
-  flex-wrap: wrap;
-  /* quebra linha em telas menores */
-  padding: 10% 10px;
-  /* centraliza os cards */
-
+  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+  gap: 30px;
+  flex-wrap: wrap; /* Essencial para quebrar linha no celular */
+  padding: 50px 20px;
 }
 
+/* O "envelope" do card */
 .align-Cards {
-
-  width: 900px;
-  height: 290px;
+  flex: 1; /* Permite que o card cresça e diminua */
+  min-width: 300px; /* Não deixa o card ficar menor que 300px */
+  max-width: 400px; /* Não deixa o card ficar gigante em telas grandes */
   background-color: #ffffff;
-  border: 2px solid #00000033;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #7793825e;
-  text-align: left;
-  padding: 2px;
+  border: 1px solid #0000001a;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px #2525253f;
   transition: all 0.3s ease;
-  /* suaviza animação */
-
+  display: flex;
+  flex-direction: column;
 }
 
+/* Efeito ao passar o mouse */
 .align-Cards:hover {
-
   transform: translateY(-10px);
-  /* levanta o card */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
-  /* sombra mais forte */
-
+  box-shadow: 0 35px 30px rgba(0, 255, 102, 0.2); /* Sombra na cor da sua marca */
+  border-color: #00ff66;
 }
 
-
-.align-Cards {
-
-  border: 2px solid #00000033;
-  /* borda preta */
-  border-radius: 10px;
-
-  box-shadow: 0 0 15px #7793825e;
-  /* sombra projetada */
-  text-align: left;
-}
-
+/* Conteúdo interno do card */
 .card {
-  border-top: 10px solid #8b888888;
-  /* traço em cima */
-  padding: 5%;
-  color: #8b8888;
-  /* cor do texto */
+  padding: 30px;
+  border-top: 8px solid #252525; /* Troquei o cinza pelo seu verde de destaque */
+  border-radius: 12px 12px 0 0;
+  color: #333;
 }
 
-h2 {
-  font-size: 2em;
-  width: bold;
+/* Estilização dos títulos nos cards */
+.card h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #747474;
+  text-transform: uppercase;
 }
 
-h2 {
-  letter-spacing: 7px;
-  /* espaço entre caracteres */
+/* Texto descritivo dentro do card */
+.certificacoes {
+  font-size: 0.95rem;
+  color: #252525;
+  line-height: 1.6;
+  display: grid;
 }
 
-
-
-.Cards {
-  align-content: center;
-  border: 2px solid #00000033;
-  /* borda preta */
-  border-radius: 10px;
-
-  box-shadow: 0 0 15px #7793825e;
-  /* sombra projetada */
-  text-align: left;
+.h2certificacoes {
+  font-size: 3.5rem;
+  margin: 0% 5%;
 }
 
-/*-------------------------------------------------------------*/
-
-@media (max-width:1000px){
-  section {
-    padding: 2% 20px;
-    flex-wrap:inherit;
+/* --- Ajustes para Celular --- */
+@media (max-width: 768px) {
+  .cards-container {
+    padding: 20px 10px;
+    gap: 20px; 
   }
-   .certificacoes {
-        padding: 0% 10%;
 
+  .align-Cards {
+    min-width: 100%; /* No celular, o card ocupa a largura toda */
+    max-width: 100%;
+     padding: 0 12px;
+  }
+
+  .card {
+    padding: 10%;
+  }
+
+  .card h2 {
+  
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+  }
+
+  .h2certificacoes {
+  font-size: 2.5rem;
+  margin: 0% 5%;
+}
+}
+
+/* --- RESPONSIVIDADE PARA TABLETS (Telas entre 769px e 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cards-container {
+        padding: 40px 5%;
+        gap: 20px; /* Reduz um pouco o espaço para caber melhor */
     }
 
-  .cards-container {
-    padding: 10% 0%;
-  }
+    .align-Cards {
+        /* Força os cards a ocuparem quase metade da largura para ficarem 2 por linha */
+        flex: 0 1 calc(45%); 
+        min-width: 620px; 
+        max-width: 48%;
+    }
 
-  .card {
-    padding: 12%;
-    border-top: none;
-  }
-
-  .align-Cards {
-    display: grid;
-    /* coloca os cards lado a lado */
-    width: 690px;
-    height: 32%;
-    justify-self: center;
-    align-content: center;
-    background-color: #f5f5f5;
-    border-radius: 5%;
-  }
-}
-
-
-@media (max-width:500px) {
-
-  section {
-    padding: 10% 20px;
-    flex-wrap:inherit;
-  }
-
-  .cards-container {
-    padding: 10% 0%;
-  }
-
-  .card {
-    padding: 12%;
-    border-top: none;
-  }
-
-  .align-Cards {
-    display: grid;
-    /* coloca os cards lado a lado */
-    width: 390px;
-    height: 32%;
-    justify-self: center;
-    align-content: center;
-    background-color: #f5f5f5;
-    border-radius: 5%;
-  }
+    .h2certificacoes {
+        font-size: 2.8rem; /* Diminui um pouco o título principal no tablet */
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
 

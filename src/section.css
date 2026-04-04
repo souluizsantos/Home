@@ -1,159 +1,83 @@
-img {
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0%;
-    padding: 20px 0%;
-
-
-}
-
+/* Configuração da Seção Principal */
 section {
     display: flex;
-    justify-self: center;
+    flex-direction: row; /* Lado a lado no desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 10%;
+    min-height: 80vh;
 }
 
-.divsection {
-    padding: 14% 4%;
-    width: 500px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    /* herda a cor do pai, Assim não deixa cor de link*/
-}
-
-/* ------------------------------------- */
-
-.btn {
-    text-align: center;
-    border: 2px solid #00000033;
-    /* borda preta */
-    display: inline-block;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 12px 40px;
-    font-size: 1.2em;
-    font-weight: 600;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-
-    /* ------------------------------------- */
-
-    border-radius: 10px;
-    box-shadow: 0 0 15px #7793825e;
-    /* sombra projetada */
-    text-align: left;
-}
-
-/* ------------------------------------- */
-
-/* quando passa o mouse */
-.btn:hover {
-    background-color: #ffffff;
-    /* muda o fundo */
-    color: #000;
-    /* texto fica preto */
-}
-
-/* ------------------------------------- */
-
-.btn:hover::after {
+/* Estilização da Foto */
+section img {
     width: 100%;
+    max-width: 400px; /* Evita que a foto fique gigante */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* ------------------------------------- */
-
-.certificacoes {
-    padding: 2% 15%;
+section img:hover {
+    transform: scale(1.02);
 }
 
-.pcertificacoes {
-    padding: 0% 0%;
-    width: 96%;
+/* Container do Texto */
+.divsection {
+    max-width: 600px;
 }
 
+.divsection h1 {
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
 
-/* Responsivo */
+.divsection p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+}
 
-@media (max-width: 1000px) {
+/* Botão Instagram */
+.btn a {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+}
 
+.btn a:hover {
+    background-color: transparent;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 900px) {
     section {
-        padding: 2% 5px;
+        flex-direction: column; /* Empilha os elementos */
+        text-align: start;     /* Centraliza o texto no mobile */
+        padding: 40px 20px;
+        gap: 30px;
     }
 
-    img {
-        width: 400px;
-        height: 470px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0%;
-        padding: 0px 9%;
+    section img {
+        max-width: 280px; /* Foto um pouco menor no celular */
     }
 
-    .divsection {
-        padding: 0% 0%;
-        width: 500px;
+    .divsection h1 {
+        font-size: 2.5rem;
+         padding: 0 12px;
     }
 
-    h1 {
-        width: 500px;
-    }
-
-    p {
-        width: 396px;
-    }
-
-    .btn {
-        padding: 12px 40px;
-    }
-
-}
-
-
-@media (max-width: 768px) {
-    section {
-        display: grid;
-    }
-
-    .divsection {
-        padding: 0% 20%;
-    }
-
-    p {
-        width: 305px;
-        letter-spacing: 1px;
-        /* espaço entre caracteres */
-        line-height: 1.5;
-        /* aumenta o espaço entre linhas */
-
-    }
-
-    .btn {
-        padding: 12px 40px;
-    }
-
-    img {
-        width: auto;
-        height: auto;
-        position: static;
-        justify-self: center;
-    }
-
-    .h1certificacoes {
-        padding: 0% 5%;
-    }
-
-    .certificacoes {
-        padding: 0% 16%;
-
-    }
-
-    .h1certificacoes {
-        font-size: 46px;
-        font-weight: bold;
+    .divsection p {
+        font-size: 1rem;
+        padding: 0 12px;
     }
 }

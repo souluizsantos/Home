@@ -1,65 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-body {
+/* Configurações Globais */
+* {
     margin: 0;
     padding: 0;
-    font-family: inter;
-    background-color: #fff;
-    color: black;
-
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho dos elementos */
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: black;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Faz o corpo ter no mínimo a altura da tela */
+}
+
+/* Efeito de Rastro (Trail) */
 .trail {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  background: rgba(0, 255, 102, 0.7); /* cor do rastro */
-  border-radius: 50%;
-  pointer-events: none; /* não atrapalha cliques */
-  transform: translate(-50%, -50%);
-  animation: fadeOut 0.8s forwards;
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 255, 102, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 0.8s forwards;
+    z-index: 9999; /* Garante que fique acima de tudo */
 }
 
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
 }
 
 h1 {
-    font-size: 55px;
+    font-size: 3rem; /* Usar rem é melhor para acessibilidade */
+    margin-bottom: 20px;
 }
 
-footer{
+/* Rodapé Otimizado */
+footer {
     width: 100%;
-    left: 0;
-    bottom: 0;
     text-align: center;
-    font-weight: 100;
-    font-size: 10px;
-    padding: 15px 0px;
+    font-weight: 300;
+    font-size: 12px;
+    padding: 20px 0;
     background-color: #eeeeee;
-    justify-content: left;
+    margin-top: auto; /* Truque mágico: empurra o footer para o fim do 'flex' body */
 }
 
-
-@media (max-width: 900px) {
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        padding: 0 10px;
+    }
+    
     footer {
-        position: static; /* não fica fixo */
+        font-size: 10px;
     }
 }
-
-@media (max-width: 3000px) {
-    footer {
-        margin-top: 20%; /* empurra o footer pro fim */
-    }
-}
-
-@media (max-width: 1000px) {
-    footer {
-        margin-top: 50%; /* empurra o footer pro fim */
-    }
-}
-

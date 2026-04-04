@@ -1,11 +1,39 @@
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active'); // anima o ícone
-  menu.classList.toggle('active');      // abre/fecha o menu
+    // Função para abrir/fechar o menu
+    const toggleMenu = (e) => {
+        // e.preventDefault() evita que o navegador trate o toque como clique duplo
+        if (e.type === 'touchstart') e.preventDefault(); 
+        menu.classList.toggle('active');
+        console.log("Menu alternado!");
+    };
+
+    if (hamburger && menu) {
+        // Escuta tanto o clique quanto o toque no celular
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('touchstart', toggleMenu);
+    }
+
+    // --- EFEITO DE RASTRO (Apenas para Computador) ---
+    // Verificamos se o dispositivo NÃO é mobile antes de rodar o rastro
+    if (window.innerWidth > 1024) {
+        document.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            trail.className = 'trail'; 
+            
+            trail.style.left = e.pageX + 'px';
+            trail.style.top = e.pageY + 'px';
+            
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 800);
+        });
+    }
 });
-
 
 /*-----------------------------------------------------------------*/
 
