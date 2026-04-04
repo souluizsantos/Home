@@ -1,19 +1,20 @@
 img {
-    width: 20%;
-    height: 20%;
-    border-radius: 50%;
-    padding: 20px 4%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
+    padding: 20px 0%;
 
-    
+
 }
 
 section {
     display: flex;
-    justify-content: center;
+    justify-self: center;
 }
 
 .divsection {
-    padding: 0% 0%;
+    padding: 14% 4%;
     width: 500px;
 }
 
@@ -67,7 +68,7 @@ a {
 /* ------------------------------------- */
 
 .certificacoes {
-    padding: 2% 25%;
+    padding: 2% 15%;
 }
 
 .pcertificacoes {
@@ -81,39 +82,33 @@ a {
 @media (max-width: 1000px) {
 
     section {
-        display: grid;
-        justify-content: center;
-        width: auto;
-        padding: 2%;
-    
-    }
-    .divsection {
-    padding: 0% 5%;
-    width: auto;
+        padding: 2% 5px;
     }
 
-     .divsection {
-    padding: 0% 0%;
-    width: 100%;
-}
+    img {
+        width: 400px;
+        height: 470px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0%;
+        padding: 0px 9%;
+    }
+
+    .divsection {
+        padding: 0% 0%;
+        width: 500px;
+    }
+
     h1 {
         width: 500px;
     }
 
     p {
-        width: 550px;
+        width: 396px;
     }
 
     .btn {
         padding: 12px 40px;
-    }
-
-    img {
-        width: 200px;
-        height: 200px;
-        position: sticky;
-        padding: 0% 0%;
-
     }
 
 }
@@ -122,38 +117,43 @@ a {
 @media (max-width: 768px) {
     section {
         display: grid;
-        justify-content: center;
-        width: auto;
-       
     }
 
     .divsection {
-    padding: 0% 16%;
-}
- p {
-    width: 60%;
- }
+        padding: 0% 20%;
+    }
+
+    p {
+        width: 305px;
+        letter-spacing: 1px;
+        /* espaço entre caracteres */
+        line-height: 1.5;
+        /* aumenta o espaço entre linhas */
+
+    }
 
     .btn {
         padding: 12px 40px;
     }
 
     img {
-        width: 200px;
-        height: 200px;
-      
+        width: auto;
+        height: auto;
         position: static;
-        padding: 2% 16%;
+        justify-self: center;
+    }
 
+    .h1certificacoes {
+        padding: 0% 5%;
     }
 
     .certificacoes {
-    padding: 0% 16%;
-    
-}
+        padding: 0% 16%;
 
-.h1certificacoes {
-    font-size: 46px;
-    font-weight: bold;
-}
+    }
+
+    .h1certificacoes {
+        font-size: 46px;
+        font-weight: bold;
+    }
 }
